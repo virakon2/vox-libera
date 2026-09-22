@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vox Libera — chatbot gratuito</title>
+    <meta
+      name="description"
+      content="Conversá con una IA de uso gratuito, sin cuenta y sin clave."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,650&family=Outfit:wght@380;500;640&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="sheet">
+      <header class="mast">
+        <div class="seal" aria-hidden="true">VL</div>
+        <div class="mast-copy">
+          <p class="eyebrow">IA de uso gratuito · sin cuenta</p>
+          <h1>Vox Libera</h1>
+          <p class="lede">
+            Escribí como si hablaras con una persona. La respuesta la genera un modelo
+            abierto, sin clave y sin costo para quien pregunta.
+          </p>
+        </div>
+        <button type="button" class="ghost" id="nueva">Nueva charla</button>
+      </header>
+
+      <main id="hilo" class="hilo" aria-live="polite" aria-relevant="additions"></main>
+
+      <div class="starters" id="starters">
+        <button type="button" data-prompt="Explicame en pocas líneas qué es un chatbot y para qué sirve.">
+          ¿Qué es un chatbot?
+        </button>
+        <button type="button" data-prompt="Escribí un haiku sobre el mar de Lima.">
+          Un haiku del mar
+        </button>
+        <button type="button" data-prompt="Tengo huevo, arroz y limón. ¿Qué puedo cocinar esta noche? Dame una receta corta.">
+          Cena con lo que hay
+        </button>
+        <button type="button" data-prompt="Mostrame un ejemplo corto de async/await en JavaScript y explicá qué hace cada línea.">
+          async/await, breve
+        </button>
+      </div>
+
+      <form class="composer" id="composer">
+        <label class="sr" for="caja">Tu mensaje</label>
+        <textarea
+          id="caja"
+          rows="1"
+          maxlength="4000"
+          placeholder="Escribí tu mensaje…"
+          required
+        ></textarea>
+        <button type="submit" id="enviar">Enviar</button>
+      </form>
+      <p class="fine" id="estado">
+        Modelo gratuito gpt-oss-20b, a través de Pollinations. La primera respuesta puede tardar
+        porque el modelo piensa antes de hablar.
+      </p>
+    </div>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
